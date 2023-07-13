@@ -1,11 +1,25 @@
 {
   "compilerOptions": {
     "outDir": "./build/",
+    //Разработчик должен явно указывать any как тип переменнной
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "ESNext",
     "target": "es5",
+    //Разрешение Jsx разметки
     "jsx": "react",
+    //Позволяет компилятору обрабатывать не только Ts файлы но и Js
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    //Флаг позволяющий синтетически создавать дефолтные import
+    //Пример
+    //import * as React from 'react';
+    "allowSyntheticDefaultImports": true,
+    //Флаг позволяющий работать с import в обычном режиме без require()
+    "esModuleInterop": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   }
 }
