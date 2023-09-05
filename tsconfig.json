@@ -3,10 +3,10 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     //Разработчик должен явно указывать any как тип переменнной
-    "module": "ESNext",
+    "module": "es6",
     "baseUrl": ".",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     //Разрешение Jsx разметки
     "allowJs": true,
     //Позволяет компилятору обрабатывать не только Ts файлы но и Js
