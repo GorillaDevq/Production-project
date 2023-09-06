@@ -15,7 +15,7 @@ export default function buildWebpackConfig(options: BuildOptions): webpack.Confi
         mode,
         entry: paths.entry,
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolves(),
         output: {

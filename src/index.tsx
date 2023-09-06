@@ -1,7 +1,7 @@
 import {render} from "react-dom";
-import './123.scss'
+import App from "./components/App/App";
 
 render (
-    <div className='test'>dsfsdfs1213dfs</div>,
+    <App/>,
     document.getElementById('root')
 )
