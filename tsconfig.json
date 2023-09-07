@@ -3,7 +3,7 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     //Разработчик должен явно указывать any как тип переменнной
-    "module": "es6",
+    "module": "esnext",
     "baseUrl": ".",
     "target": "es5",
     "jsx": "react-jsx",
