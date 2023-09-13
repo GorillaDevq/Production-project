@@ -17,7 +17,7 @@ export default function buildWebpackConfig(options: BuildOptions): webpack.Confi
         module: {
             rules: buildLoaders(options),
         },
-        resolve: buildResolves(),
+        resolve: buildResolves(options),
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,

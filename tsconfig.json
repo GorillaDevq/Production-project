@@ -5,6 +5,9 @@
     //Разработчик должен явно указывать any как тип переменнной
     "module": "esnext",
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "target": "es5",
     "jsx": "react-jsx",
     //Разрешение Jsx разметки
@@ -15,7 +18,7 @@
     //Флаг позволяющий синтетически создавать дефолтные import
     //Пример
     //import * as React from 'react';
-    "esModuleInterop": true,
+    "esModuleInterop": true
     //Флаг позволяющий работать с import в обычном режиме без require()
   },
   "ts-node": {
