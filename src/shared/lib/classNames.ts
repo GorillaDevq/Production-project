@@ -8,7 +8,7 @@ export function classNames(className: string, mods: Mods = {}, additional: strin
 
     return [
         className,
-        ...additional,
+        ...additional.filter(Boolean),
         resultModes
     ].join(' ')
 }
