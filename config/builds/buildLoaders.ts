@@ -31,7 +31,23 @@ export default function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule
         ],
     }
 
+    const svgLoader = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|ttf|woff|woff2)$/i,
+        loader: 'file-loader',
+        options: {
+            outputPath: 'assets',
+        }
+    }
+
     return [
+        fileLoader,
+        svgLoader,
         typeScriptLoader,
         scssLoader,
     ]
