@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, FC} from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import cls from './Button.module.scss';
 
@@ -27,5 +27,5 @@ export const Button: FC<ButtonProps> = (ButtonProps) => {
         >
             {children}
         </button>
-    )
-}
+    );
+};

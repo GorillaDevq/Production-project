@@ -9,6 +9,6 @@ export function classNames(className: string, mods: Mods = {}, additional: strin
     return [
         className,
         ...additional.filter(Boolean),
-        resultModes
-    ].join(' ')
+        resultModes,
+    ].join(' ');
 }
