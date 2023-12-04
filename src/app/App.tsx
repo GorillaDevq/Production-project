@@ -4,6 +4,7 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widjets/Navbar';
 import { Sidebar } from 'widjets/Sidebar';
 import { Suspense } from 'react';
+import { PageLoader } from 'widjets/PageLoader';
 import { useTheme } from './providers/ThemeProvider';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
+            <Suspense fallback={<PageLoader />}>
                 <Navbar />
                 <main className="content-page">
                     <Sidebar />
