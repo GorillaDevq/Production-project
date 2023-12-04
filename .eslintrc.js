@@ -2,10 +2,12 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -18,6 +20,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         indent: [2, 4],
@@ -37,7 +40,8 @@ module.exports = {
         'react/no-unused-prop-types': 'off',
         'react/function-component-definition': 'off',
         'react/button-has-type': 'off',
-        'max-len': [2, 120],
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'max-len': [2, 120, { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
