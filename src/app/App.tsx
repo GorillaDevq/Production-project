@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widjets/Navbar';
 import { Sidebar } from 'widjets/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { PageLoader } from 'widjets/PageLoader';
 import { useTheme } from './providers/ThemeProvider';
 
