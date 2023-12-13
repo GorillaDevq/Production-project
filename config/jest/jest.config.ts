@@ -4,15 +4,6 @@
  */
 
 export default {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
-    // Stop running tests after `n` failures
-    // bail: 0,
-
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "/private/var/folders/hb/hd39n7lx7zs011vbvrkhtypm0000gn/T/jest_dx",
-
-    // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -34,6 +25,23 @@ export default {
         // Поиск тестов в корне проекта
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+    modulePaths: [
+        '<rootDir>src',
+    ],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+    },
+    // All imported modules in your tests should be mocked automatically
+    // automock: false,
+    // Stop running tests after `n` failures
+    // bail: 0,
+
+    // The directory where Jest should store its cached dependency information
+    // cacheDirectory: "/private/var/folders/hb/hd39n7lx7zs011vbvrkhtypm0000gn/T/jest_dx",
+
+    // Automatically clear mock calls, instances and results before every test
+
     // Indicates whether the coverag e information should be collected while executing the test
     // collectCoverage: false,
 
