@@ -3,3 +3,9 @@
 
 # production
 /build
+
+# webstorm
+.idea
+
+# storybook
+/storybook-static
