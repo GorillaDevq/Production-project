@@ -19,6 +19,7 @@ export default function buildPlugins({ paths, isDev }: BuildOptions): webpack.We
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
             openAnalyzer: false,
         }),
         isDev && new ReactRefreshWebpackPlugin(),
