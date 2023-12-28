@@ -13,7 +13,7 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently --kill-others \"npm run storybook\" \"npm run test:ui\"",
     "test:ui:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
@@ -49,6 +49,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "concurrently": "^8.2.2",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "eslint": "^8.10.0",
@@ -85,7 +86,6 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^0.26.1",
-    "concurrently": "^7.0.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
