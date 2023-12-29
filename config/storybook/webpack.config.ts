@@ -17,14 +17,14 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.module.rules.push(buildCssLoader(true));
     config.module.rules.push(buildBabelLoader(false, true));
     // eslint-disable-next-line no-param-reassign
-    // config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-    //     if (/svg/.test(rule.test as string)) {
-    //         return { ...rule, exclude: /\.svg/i };
-    //     }
-    //
-    //     return rule;
-    // });
-    // config.module.rules.push(buildSvgLoader());
+    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+            return { ...rule, exclude: /\.svg/i };
+        }
+
+        return rule;
+    });
+    config.module.rules.push(buildSvgLoader());
 
     return config;
 };

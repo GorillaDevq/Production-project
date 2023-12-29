@@ -1,53 +1,50 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import { AppLink, AppLinkTheme } from './AppLink';
 
-const meta: Meta<typeof Button> = {
-    title: 'shared/Button',
-    component: Button,
+const meta: Meta<typeof AppLink> = {
+    title: 'shared/AppLink',
+    component: AppLink,
     parameters: {
         layout: 'fullscreen',
     },
     argTypes: {
     },
+    args: {
+        to: '/',
+    },
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof AppLink>;
 
-export const Primary: Story = {
+export const PrimaryLight: Story = {
     args: {
         children: 'Text',
+        theme: AppLinkTheme.PRIMARY,
     },
 };
 
-export const ClearLight: Story = {
+export const PrimaryDark: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.CLEAR,
-    },
-};
-
-export const ClearDark: Story = {
-    args: {
-        children: 'Text',
-        theme: ThemeButton.CLEAR,
+        theme: AppLinkTheme.PRIMARY,
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const OutlineLight: Story = {
+export const SecondaryLight: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppLinkTheme.INVERTED,
     },
 };
 
-export const OutlineDark: Story = {
+export const SecondaryDark: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppLinkTheme.INVERTED,
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };
