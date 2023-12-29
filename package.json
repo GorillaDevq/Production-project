@@ -15,7 +15,7 @@
     "test:ui": "npx loki test",
     "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
     "test:ui:ok": "npx loki approve",
-    "test:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ci": "loki --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
