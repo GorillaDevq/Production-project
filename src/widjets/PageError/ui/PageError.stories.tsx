@@ -1,24 +1,28 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { PageError } from 'widjets/PageError/ui/PageError';
+import { PageError } from './PageError';
 
-export default {
-    title: 'widjet/PageError',
+const meta: Meta<typeof PageError> = {
+    title: 'widjets/PageError',
     component: PageError,
-    argTypes: {
-        backgroundColor: { control: 'color' },
+    parameters: {
+        layout: 'fullscreen',
     },
-} as ComponentMeta<typeof PageError>;
-
-const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />;
-
-export const Light = Template.bind({});
-Light.args = {
+    argTypes: {
+    },
 };
 
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-Dark.args = {
+export default meta;
+type Story = StoryObj<typeof PageError>;
+
+export const Light: Story = {
+    args: {
+    },
+};
+
+export const Dark: Story = {
+    args: {
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
