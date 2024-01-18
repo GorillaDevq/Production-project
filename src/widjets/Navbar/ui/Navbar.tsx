@@ -9,20 +9,12 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = (NavbarProps) => {
-    const { t } = useTranslation();
     const { className } = NavbarProps;
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={classNames(cls.links)}>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    to="/"
-                    className={classNames(cls.mainLink)}
-                >
-                    {t('Main link')}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.INVERTED} to="/About">{t('About link')}</AppLink>
+                /
             </div>
         </div>
     );

@@ -40,7 +40,7 @@ module.exports = {
         'react/no-unused-prop-types': 'off',
         'react/function-component-definition': 'off',
         'react/button-has-type': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }],
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
         'max-len': [2, 120, { ignoreComments: true }],
     },
     globals: {
