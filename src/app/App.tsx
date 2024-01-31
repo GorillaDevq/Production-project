@@ -1,9 +1,8 @@
-import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widjets/Navbar';
 import { Sidebar } from 'widjets/Sidebar';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import { PageLoader } from 'widjets/PageLoader';
 import { useTheme } from './providers/ThemeProvider';
 
@@ -18,6 +17,7 @@ function App() {
                     <Sidebar />
                     <AppRouter />
                 </main>
+
             </Suspense>
         </div>
     );

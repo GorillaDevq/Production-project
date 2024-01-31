@@ -1,8 +1,14 @@
 import { Decorator } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 
-export const ThemeDecorator = (theme: Theme): Decorator => (StoryComponent) => (
-    <div className={`app ${theme}`}>
-        <StoryComponent />
-    </div>
-);
+export const ThemeDecorator = (theme: Theme): Decorator => (StoryComponent) => {
+    document.body.className = theme;
+
+    return (
+        <ThemeProvider>
+            <div className={`app ${theme}`}>
+                <StoryComponent />
+            </div>
+        </ThemeProvider>
+    );
+};
