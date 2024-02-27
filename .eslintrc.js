@@ -42,7 +42,7 @@ module.exports = {
         'react/function-component-definition': 'off',
         'react/button-has-type': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
-        'max-len': [2, 120, { ignoreComments: true }],
+        'max-len': [2, 150, { ignoreComments: true }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'react-hooks/rules-of-hooks': 'error',

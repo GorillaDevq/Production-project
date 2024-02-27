@@ -1,0 +1,14 @@
+.Input {
+    color: var(--primary-color);
+    border: none;
+    background: transparent;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.borderBottom {
+    border-bottom: 1px solid var(--inverted-bg-color);
+}

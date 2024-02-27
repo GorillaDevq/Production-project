@@ -17,7 +17,6 @@ function App() {
                     <Sidebar />
                     <AppRouter />
                 </main>
-
             </Suspense>
         </div>
     );

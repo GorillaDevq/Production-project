@@ -1,4 +1,6 @@
-import React, { FC, useCallback, useEffect } from 'react';
+import React, {
+    FC, useCallback, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
@@ -6,13 +8,17 @@ import cls from './Modal.module.scss';
 interface ModalProps {
     className?: string;
     isOpen: boolean;
-    closeHandler: () => void;
+    onClose: () => void;
+    lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (ModalProps) => {
     const {
-        className, isOpen, closeHandler, children,
+        className, isOpen, onClose,
+        children, lazy,
     } = ModalProps;
+
+    const [isMounted, setIsMounted] = useState(false);
 
     const mods: Record<string, boolean> = {
         [cls.modal_opened]: isOpen,
@@ -24,9 +30,9 @@ export const Modal: FC<ModalProps> = (ModalProps) => {
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
-            closeHandler();
+            onClose();
         }
-    }, [closeHandler]);
+    }, [onClose]);
 
     useEffect(() => {
         if (isOpen) {
@@ -38,10 +44,20 @@ export const Modal: FC<ModalProps> = (ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(cls.modal, mods, [className])}>
-                <div className={cls.modal__overlay} onClick={closeHandler}>
+                <div className={cls.modal__overlay} onClick={onClose}>
                     <div className={cls.modal__container} onClick={onContentClick}>
                         {children}
                     </div>

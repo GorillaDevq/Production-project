@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -23,9 +24,9 @@ export const Navbar: FC<NavbarProps> = (NavbarProps) => {
             <Button theme={ButtonTheme.CLEAR} onClick={onToggleModal} className={classNames(cls.links)}>
                 {t('Enter')}
             </Button>
-            <Modal isOpen={isAuthModal} closeHandler={onToggleModal}>
+            <LoginModal isOpen={isAuthModal} onClose={onToggleModal}>
                 {t('asdasd')}
-            </Modal>
+            </LoginModal>
         </div>
     );
 };
