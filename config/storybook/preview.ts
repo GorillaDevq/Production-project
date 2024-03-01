@@ -21,7 +21,7 @@ export const decorators = [
     StyleDecorator(),
     ThemeDecorator(Theme.LIGHT),
     RouterDecorator(),
-    StoreDecorator(),
+    StoreDecorator({}),
 ];
 
 export default preview;

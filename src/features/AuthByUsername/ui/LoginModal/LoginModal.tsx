@@ -19,7 +19,7 @@ export const LoginModal: FC<LoginModalProps> = (LoginModalProps) => {
             onClose={onClose}
             lazy
         >
-            <LoginForm />
+            <LoginForm onClose={onClose} />
         </Modal>
     );
 };

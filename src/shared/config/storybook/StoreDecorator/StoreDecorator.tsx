@@ -1,13 +1,9 @@
 import { Decorator } from '@storybook/react';
-import { Provider } from 'react-redux';
-import { createReduxStore } from 'app/providers/StoreProvider';
+import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { DeepPartial } from '@reduxjs/toolkit';
 
-export const StoreDecorator = (): Decorator => (StoryComponent) => {
-    const store = createReduxStore();
-
-    return (
-        <Provider store={store}>
-            <StoryComponent />
-        </Provider>
-    );
-};
+export const StoreDecorator = (state: DeepPartial<StateSchema>): Decorator => (StoryComponent) => (
+    <StoreProvider initialState={state}>
+        <StoryComponent />
+    </StoreProvider>
+);

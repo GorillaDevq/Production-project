@@ -1,14 +1,19 @@
 {
   "About link": "About website",
+  "Authorization form": "Authorization form",
   "Decrement": "Decrement",
   "Enter": "Enter",
+  "Enter login": "Enter login",
+  "Enter password": "Enter password",
   "Increment": "Increment",
   "Language": "English",
   "LanguageShort": "En",
+  "Logout": "Logout",
   "Main link": "Main",
   "Main page": "Main page",
   "NotFoundPage": "Page not found",
   "Reload page": "Reload page",
   "Throw Error": "Unknown error",
+  "Wrong login or password": "Wrong login or password",
   "bug button": "Break app"
 }

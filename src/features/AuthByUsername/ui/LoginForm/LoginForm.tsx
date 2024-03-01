@@ -5,19 +5,23 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginActions } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
-    className?: string,
+    className?: string;
+    onClose: () => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = (LoginFormProps) => {
-    const { className } = LoginFormProps;
+    const { className, onClose } = LoginFormProps;
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const { username, password } = useSelector(getLoginState);
+    const {
+        username, password, error, isLoading,
+    } = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -29,20 +33,25 @@ export const LoginForm: FC<LoginFormProps> = (LoginFormProps) => {
 
     const onLoginClick = useCallback(() => {
         dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+        onClose();
+    }, [dispatch, password, username, onClose]);
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
+            <Text title={t('Authorization form')} />
+            {Boolean(error) && (
+                <Text text={error} theme={TextTheme.ERROR} />
+            )}
             <Input
                 className={cls.LoginForm__input}
                 autoFocus
-                placeholder="Введите логин"
+                placeholder={t('Enter login')}
                 onChange={onChangeUsername}
                 value={username}
             />
             <Input
                 className={cls.LoginForm__input}
-                placeholder="Введите пароль"
+                placeholder={t('Enter password')}
                 onChange={onChangePassword}
                 value={password}
             />
@@ -50,6 +59,7 @@ export const LoginForm: FC<LoginFormProps> = (LoginFormProps) => {
                 theme={ButtonTheme.OUTLINE}
                 className={cls.LoginForm__submit}
                 onClick={onLoginClick}
+                disabled={isLoading}
             >
                 {t('Enter')}
             </Button>

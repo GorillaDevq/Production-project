@@ -1,14 +1,19 @@
 {
   "About link": "О сайте",
+  "Authorization form": "Форма авторизации",
   "Decrement": "Уменьшить",
   "Enter": "Войти",
+  "Enter login": "Введите логин",
+  "Enter password": "Введите пароль",
   "Increment": "Увеличить",
   "Language": "Русский",
   "LanguageShort": "Ru",
+  "Logout": "Выйти",
   "Main link": "Главная",
   "Main page": "Главная",
   "NotFoundPage": "Страница не найдена",
   "Reload page": "Перезагрузить страницу",
   "Throw Error": "Неизвестная ошибка",
+  "Wrong login or password": "Ввели неверный логин или пароль",
   "bug button": "Сломать приложение"
 }
