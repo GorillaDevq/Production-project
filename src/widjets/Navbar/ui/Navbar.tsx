@@ -18,7 +18,7 @@ export const Navbar: FC<NavbarProps> = (NavbarProps) => {
 
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
-    console.log(isAuthModal);
+
     const onOpenModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
@@ -46,7 +46,7 @@ export const Navbar: FC<NavbarProps> = (NavbarProps) => {
             <Button theme={ButtonTheme.CLEAR} onClick={onOpenModal} className={classNames(cls.links)}>
                 {t('Enter')}
             </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </div>
     );
 };
