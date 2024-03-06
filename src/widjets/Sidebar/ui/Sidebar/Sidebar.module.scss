@@ -30,21 +30,6 @@
     flex-direction: column;
 }
 
-.item {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    opacity: 1;
-}
-
-.icon {
-    margin-right: 10px;
-    fill: var(--inverted-primary-color);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 

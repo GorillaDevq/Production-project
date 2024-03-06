@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Иван",
+    "lastName": "Михалев",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Volgograd",
+    "username": "admin",
+    "avatar": "https://creaspace.ru/images/poster/full/36/3858_d3a0f.jpg"
+  }
 }
