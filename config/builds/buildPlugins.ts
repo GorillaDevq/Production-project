@@ -6,7 +6,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 import { DefinePlugin } from './plugins/DefinePlugin';
 
-export default function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export default function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new webpack.ProgressPlugin(),
         new HTMLWebpackPlugin({
@@ -16,7 +16,7 @@ export default function buildPlugins({ paths, isDev }: BuildOptions): webpack.We
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
-        DefinePlugin(isDev),
+        DefinePlugin(isDev, apiUrl),
         new BundleAnalyzerPlugin({
             analyzerMode: 'static',
             openAnalyzer: false,
