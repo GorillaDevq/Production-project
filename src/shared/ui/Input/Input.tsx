@@ -5,7 +5,8 @@ import React, {
 import cls from './Input.module.scss';
 
 export enum InputTheme {
-    BORDER_BOTTOM = 'borderBottom'
+    BORDER_BOTTOM = 'borderBottom',
+    CLEAR = 'clear'
 }
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
@@ -20,8 +21,8 @@ interface InputProps extends HTMLInputProps {
 
 export const Input = memo((props: InputProps) => {
     const {
-        className, theme, value,
-        type = 'text', onChange,
+        className, theme = InputTheme.CLEAR,
+        value, type = 'text', onChange,
         autoFocus, ...otherProps
     } = props;
 

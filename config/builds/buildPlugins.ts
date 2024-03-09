@@ -7,7 +7,7 @@ import { BuildOptions } from './types/config';
 import { DefinePlugin } from './plugins/DefinePlugin';
 
 export default function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         new webpack.ProgressPlugin(),
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -17,10 +17,15 @@ export default function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): we
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         DefinePlugin(isDev, apiUrl),
-        new BundleAnalyzerPlugin({
+    ];
+
+    if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
             analyzerMode: 'static',
             openAnalyzer: false,
-        }),
-        isDev && new ReactRefreshWebpackPlugin(),
-    ].filter(Boolean);
+        }));
+    }
+
+    return plugins;
 }

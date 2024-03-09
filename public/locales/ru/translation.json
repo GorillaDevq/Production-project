@@ -12,9 +12,10 @@
   "Main link": "Главная",
   "Main page": "Главная",
   "NotFoundPage": "Страница не найдена",
+  "Profile link": "Профиль",
+  "Profile page": "Profile page",
   "Reload page": "Перезагрузить страницу",
   "Throw Error": "Неизвестная ошибка",
   "Wrong login or password": "Ввели неверный логин или пароль",
-  "bug button": "Сломать приложение",
-  "Profile page": "Profile page"
+  "bug button": "Сломать приложение"
 }

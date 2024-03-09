@@ -21,8 +21,8 @@ describe('counterSlice.test', () => {
             });
     });
     test('with empty state', () => {
-        const state: CounterSchema = undefined;
-        expect(counterReducer(state, counterActions.increment()))
+        const state = undefined;
+        expect(counterReducer(state as unknown as CounterSchema, counterActions.increment()))
             .toEqual({
                 value: 1,
             });

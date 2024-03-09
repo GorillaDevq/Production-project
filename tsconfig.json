@@ -18,8 +18,10 @@
     //Флаг позволяющий синтетически создавать дефолтные import
     //Пример
     //import * as React from 'react';
-    "esModuleInterop": true
+    "esModuleInterop": true,
     //Флаг позволяющий работать с import в обычном режиме без require()
+    "strict": true,
+    // Включает строгий режим
   },
   "ts-node": {
     "compilerOptions": {
