@@ -16,3 +16,9 @@
 .clear {
     border: none;
 }
+
+.readonly {
+    opacity: 0.7;
+    user-select: none;
+    cursor: auto;
+}

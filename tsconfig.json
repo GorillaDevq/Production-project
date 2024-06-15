@@ -22,6 +22,7 @@
     //Флаг позволяющий работать с import в обычном режиме без require()
     "strict": true,
     // Включает строгий режим
+    "resolveJsonModule": true,
   },
   "ts-node": {
     "compilerOptions": {

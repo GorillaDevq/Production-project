@@ -18,7 +18,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config?.resolve?.extensions?.push('.ts', '.tsx');
     config?.module?.rules?.push(buildCssLoader(true));
     config?.module?.rules?.push(buildBabelLoader(false, true));
-    config?.plugins?.push(DefinePlugin(true, ''));
+    config?.plugins?.push(DefinePlugin(true, '', 'storybook'));
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {

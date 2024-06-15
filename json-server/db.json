@@ -26,9 +26,9 @@
     }
   ],
   "profile": {
-    "firstName": "Иван",
-    "lastName": "Михалев",
-    "age": 22,
+    "firstName": "Ivan",
+    "lastName": "Mikhalev",
+    "age": 23,
     "currency": "RUB",
     "country": "Russia",
     "city": "Volgograd",

@@ -1,6 +1,21 @@
 {
+  "Cancel": "Отменить",
+  "INCORRECT AGE": "Неверный возраст",
+  "INCORRECT COUNTRY": "Неверная старана",
+  "INCORRECT NO DATA": "Нет данных",
+  "INCORRECT USER DATA": "Неверные данные",
   "Profile": "Профиль",
+  "SERVER ERROR": "Ошибка на сервере",
+  "Save": "Сохранить",
+  "There was an error loading": "Произошла ошибка при загрузке",
+  "Try to reload page": "Попробуйте перезагрузить страницу",
   "Update profile": "Редактировать профиль",
-  "Your firstName": "Ваше Имя>",
-  "Your lastName": "Ваша Фамилия>"
+  "Your age": "Возраст>",
+  "Your avatar": "Аватар>",
+  "Your city": "Город>",
+  "Your country": "Страна>",
+  "Your currency": "Валюта>",
+  "Your firstName": "Имя>",
+  "Your lastName": "Фамилия>",
+  "Your username": "Username>"
 }

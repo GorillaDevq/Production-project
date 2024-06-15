@@ -4,6 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { TranslationDecorator } from 'shared/config/storybook/TranslationDecorator/TranslationDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -17,11 +18,27 @@ const preview: Preview = {
     },
 };
 
+export const globalTypes = {
+    locale: {
+        name: 'Locale',
+        description: 'Internationalization locale',
+        toolbar: {
+            icon: 'globe',
+            items: [
+                { value: 'en', title: 'English' },
+                { value: 'ru', title: 'Russian' },
+            ],
+            showName: true,
+        },
+    },
+};
+
 export const decorators = [
     StyleDecorator(),
     ThemeDecorator(Theme.LIGHT),
-    RouterDecorator(),
     StoreDecorator({}),
+    TranslationDecorator(),
+    RouterDecorator(),
 ];
 
 export default preview;

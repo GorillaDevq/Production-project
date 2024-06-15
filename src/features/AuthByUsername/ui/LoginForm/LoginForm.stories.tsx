@@ -13,7 +13,7 @@ const meta: Meta<typeof LoginForm> = {
     },
     argTypes: {
     },
-    decorators: [SuspenseDecorator()],
+    decorators: [],
 };
 
 export default meta;

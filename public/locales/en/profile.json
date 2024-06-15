@@ -1,6 +1,21 @@
 {
+  "Cancel": "Cancel",
+  "INCORRECT AGE": "INCORRECT AGE",
+  "INCORRECT COUNTRY": "INCORRECT COUNTRY",
+  "INCORRECT NO DATA": "INCORRECT NO DATA",
+  "INCORRECT USER DATA": "INCORRECT USER DATA",
   "Profile": "Profile",
+  "SERVER ERROR": "SERVER ERROR",
+  "Save": "Save",
+  "There was an error loading": "There was an error loading",
+  "Try to reload page": "Try to reload page",
   "Update profile": "Update profile",
-  "Your firstName": "Your firstName>",
-  "Your lastName": "Your lastName>"
+  "Your age": "Age>",
+  "Your avatar": "Avatar>",
+  "Your city": "Сity>",
+  "Your country": "Country>",
+  "Your currency": "Currency>",
+  "Your firstName": "FirstName>",
+  "Your lastName": "LastName>",
+  "Your username": "Username>"
 }
