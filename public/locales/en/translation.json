@@ -1,5 +1,6 @@
 {
   "About link": "About website",
+  "Articles link": "Articles",
   "Authorization form": "Authorization form",
   "Decrement": "Decrement",
   "Enter": "Enter",
@@ -13,10 +14,11 @@
   "Main page": "Main page",
   "NotFoundPage": "Page not found",
   "Profile link": "Profile",
-  "Articles link": "Articles",
   "Profile page": "Profile page",
   "Reload page": "Reload page",
+  "There was an error loading the article": "There was an error loading the article",
   "Throw Error": "Unknown error",
+  "Wrong article data": "Wrong article data",
   "Wrong login or password": "Wrong login or password",
   "Wrong profile data": "Wrong profile data",
   "bug button": "Break app"

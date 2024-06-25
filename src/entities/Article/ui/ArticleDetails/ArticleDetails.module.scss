@@ -1,0 +1,13 @@
+.ArticleDetails {
+    min-height: 100%;
+}
+
+.skeletons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.avatar {
+    align-self: center;
+}
