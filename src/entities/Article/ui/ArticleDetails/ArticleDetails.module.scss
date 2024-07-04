@@ -1,5 +1,6 @@
 .ArticleDetails {
     min-height: 100%;
+    width: 100% ;
 }
 
 .skeletons {
@@ -10,4 +11,20 @@
 
 .avatar {
     align-self: center;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    &__avatar {
+        align-self: center;
+    }
+
+    &__info {
+        display: flex;
+        column-gap: 7px;
+        align-items: center;
+    }
 }

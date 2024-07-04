@@ -41,6 +41,7 @@ export default function ProfilePage() {
     };
 
     useEffect(() => {
+        // Добавить асинхроныый редьюсер в стор
         if (__PROJECT__ !== 'storybook') {
             dispatch(fetchProfileData());
         }
