@@ -4,12 +4,14 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
+    getProfileData,
     getProfileReadonly,
     profileActions,
     updateProfileData,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useCallback } from 'react';
+import { getUserAuthData } from 'entities/User';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -19,9 +21,12 @@ interface ProfilePageHeaderProps {
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const { className } = props;
     const { t } = useTranslation('profile');
-
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
     const dispatch = useAppDispatch();
     const readonly = useSelector(getProfileReadonly);
+
+    const canEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
@@ -38,7 +43,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Profile')} />
-            {readonly
+            {canEdit && (readonly
                 ? (
                     <Button
                         theme={ButtonTheme.OUTLINE}
@@ -64,7 +69,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             {t('Save')}
                         </Button>
                     </>
-                )}
+                ))}
         </div>
     );
 };

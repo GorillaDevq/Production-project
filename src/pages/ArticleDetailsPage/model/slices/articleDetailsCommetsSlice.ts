@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { Comment } from 'entities/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article } from 'entities/Article';
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
@@ -41,15 +41,11 @@ const articleDetailsCommentSlice = createSlice({
                 state.isLoading = false;
                 state.error = undefined;
                 commentsAdapter.setAll(state, action.payload);
+            })
+            .addCase(addCommentForArticle.fulfilled, (state, action: PayloadAction<Comment>) => {
+                commentsAdapter.addOne(state, action.payload);
             });
     },
 });
 
 export const { reducer: articleDetailsCommentsReducer, actions: articleDetailsCommentActions } = articleDetailsCommentSlice;
-// // Can create a set of memoized selectors based on the location of this entity state
-// const booksSelectors = booksAdapter.getSelectors<RootState>(
-//     (state) => state.books
-// )
-//
-// // And then use the selectors to retrieve values
-// const allBooks = booksSelectors.selectAll(store.getState())

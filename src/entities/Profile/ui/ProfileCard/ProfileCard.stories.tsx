@@ -15,6 +15,7 @@ const meta: Meta<typeof ProfileCard> = {
     },
     args: {
         data: {
+            id: '1',
             username: 'admin',
             age: 22,
             country: Country.RUSSIA,

@@ -15,10 +15,21 @@ export const CommentList = (props: CommentListProps) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation();
 
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
             {(comments?.length && !isLoading)
-                ? comments.map((item) => (<CommentCard isLoading={isLoading} comment={item} />))
+                // eslint-disable-next-line react/no-array-index-key
+                ? comments.map((item, index) => (<CommentCard isLoading={isLoading} comment={item} key={index} />))
                 : <Text text={t('No comments')} />}
         </div>
     );
