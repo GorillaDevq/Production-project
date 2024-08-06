@@ -2,8 +2,14 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    position: relative;
 
     &__title {
         padding: 15px 0;
+    }
+
+    &__back {
+        position: absolute;
+
     }
 }

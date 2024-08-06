@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     parameters: {
         layout: 'fullscreen',
@@ -22,6 +22,11 @@ const meta: Meta<typeof ArticleDetails> = {
                 views: 1022,
                 createdAt: '26.02.2022',
                 type: [ArticleType.IT, ArticleType.SCIENCE],
+                user: {
+                    id: '1',
+                    username: 'Ivan',
+                    avatar: 'https://sun9-65.userapi.com/impg/otNK__sKAUa0SSNAkiGN9OBdEb2SK-DatZPlLw/nwkztt7dVtk.jpg?size=460x460&quality=96&sign=825e093f90336b1626b5a6dc22133658&type=album',
+                },
                 blocks: [
                     {
                         id: '1',

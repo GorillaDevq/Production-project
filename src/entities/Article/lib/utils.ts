@@ -1,14 +1,6 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import cls from './ArticlesPage.module.scss';
+import { Article } from '../model/types/article';
 
-interface ArticlesPageProps {
-    className?: string,
-}
-
-const article = {
+export const article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2024 год?',
@@ -85,16 +77,3 @@ const article = {
         },
     ],
 } as Article;
-
-const ArticlesPage = (props: ArticlesPageProps) => {
-    const { className } = props;
-    const { t } = useTranslation('article');
-
-    return (
-        <div className={classNames(cls.articles, {}, [className])}>
-            <ArticleList articles={[article, article, article, article]} view={ArticleView.BIG} isLoading />
-        </div>
-    );
-};
-
-export default memo(ArticlesPage);

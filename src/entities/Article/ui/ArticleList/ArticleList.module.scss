@@ -1,0 +1,9 @@
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    gap: 20px;
+
+    &_big {
+        grid-template-columns: 1fr;
+    }
+}
